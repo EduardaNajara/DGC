@@ -1,0 +1,778 @@
+<!doctype html>
+<html lang="pt-br" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Cadastros e movimentações com validação visual, máscaras e histórico de alterações."
+    />
+    <meta name="generator" content="Astro v5.13.2" />
+    <title>DGC | Form</title>
+    <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <meta name="theme-color" content="#212529" />
+    <link href="./assets/style/navbar-fixed.css" rel="stylesheet" />
+    <link href="./assets/style/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-shell">
+      <div class="container-fluid navbar-shell-inner">
+        <a class="navbar-brand brand-mark" href="Home.html">
+          <span class="brand-badge">DGC</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse navbar-collapse-custom"
+          id="navbarCollapse"
+        >
+          <ul class="navbar-nav nav-pills ms-auto mb-2 mb-lg-0 gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link" href="Home.html">Dashboard Executivo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="Form.html">
+                Cadastros e Movimentações
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="List.html">Consulta de Dados</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container page-shell dashboard-shell py-4 py-lg-5">
+      <section class="page-section mb-4 mb-lg-5">
+        <div class="row align-items-end gy-4">
+          <div class="col-lg-8">
+            <span class="dashboard-eyebrow"
+              >Form | Cadastros e movimentações</span
+            >
+            <h1 class="display-5 fw-semibold mb-3">
+              Inserção e atualização de dados operacionais
+            </h1>
+            <p class="dashboard-lead mb-0">
+              Todos os módulos contam com validação, campos obrigatórios,
+              máscaras, feedback visual, confirmação de salvamento e histórico
+              de alterações.
+            </p>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <div class="dashboard-chip d-inline-flex align-items-center gap-2">
+              <span class="dashboard-chip-dot"></span>
+              Fluxo preparado para entrada de dados
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-section row g-3 g-xl-4">
+        <div class="col-xl-8">
+          <div class="card dashboard-panel h-100">
+            <div class="card-header bg-transparent border-0 pb-0">
+              <div class="form-meta">
+                <div>
+                  <h2 class="h5 mb-1">Painel de cadastros</h2>
+                  <p class="dashboard-subtitle mb-0">
+                    Preencha um dos módulos abaixo para registrar ou atualizar
+                    informações.
+                  </p>
+                </div>
+                <span class="dashboard-mini-badge">Validação ativa</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="form-grid">
+                <section class="form-panel">
+                  <div class="form-section-title">
+                    <h3 class="h5">1. Cadastro de Clientes</h3>
+                    <span class="form-help"
+                      >Campos obrigatórios com máscara visual</span
+                    >
+                  </div>
+                  <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-lg-6">
+                      <label for="clientName" class="form-label">Nome</label>
+                      <input
+                        id="clientName"
+                        class="form-control"
+                        type="text"
+                        required
+                        placeholder="Nome completo"
+                      />
+                      <div class="invalid-feedback">
+                        Informe o nome do cliente.
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <label for="clientDocument" class="form-label"
+                        >CPF/CNPJ</label
+                      >
+                      <input
+                        id="clientDocument"
+                        class="form-control"
+                        type="text"
+                        required
+                        placeholder="000.000.000-00 ou 00.000.000/0000-00"
+                      />
+                      <div class="invalid-feedback">
+                        Informe um CPF ou CNPJ válido.
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <label for="clientPhone" class="form-label"
+                        >Telefone</label
+                      >
+                      <input
+                        id="clientPhone"
+                        class="form-control"
+                        type="tel"
+                        required
+                        placeholder="(00) 00000-0000"
+                      />
+                    </div>
+                    <div class="col-lg-4">
+                      <label for="clientEmail" class="form-label">Email</label>
+                      <input
+                        id="clientEmail"
+                        class="form-control"
+                        type="email"
+                        required
+                        placeholder="cliente@empresa.com"
+                      />
+                    </div>
+                    <div class="col-lg-4">
+                      <label for="clientAddress" class="form-label"
+                        >Endereço</label
+                      >
+                      <input
+                        id="clientAddress"
+                        class="form-control"
+                        type="text"
+                        required
+                        placeholder="Rua, número, bairro"
+                      />
+                    </div>
+                    <div class="col-12 d-flex flex-wrap gap-2 pt-1">
+                      <button type="submit" class="btn btn-info">
+                        Salvar cliente
+                      </button>
+                      <button type="reset" class="btn btn-outline-light">
+                        Limpar
+                      </button>
+                    </div>
+                  </form>
+                </section>
+
+                <section class="form-panel">
+                  <div class="form-section-title">
+                    <h3 class="h5">2. Cadastro de Veículos</h3>
+                    <span class="form-help"
+                      >Relaciona cliente, marca e placa</span
+                    >
+                  </div>
+                  <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-lg-6">
+                      <label for="vehicleClient" class="form-label"
+                        >Cliente</label
+                      >
+                      <select id="vehicleClient" class="form-select" required>
+                        <option selected disabled value="">Selecione</option>
+                        <option>Cliente Alfa</option>
+                        <option>Cliente Beta</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-3">
+                      <label for="vehicleBrand" class="form-label">Marca</label>
+                      <input
+                        id="vehicleBrand"
+                        class="form-control"
+                        type="text"
+                        required
+                        placeholder="Ford"
+                      />
+                    </div>
+                    <div class="col-lg-3">
+                      <label for="vehicleModel" class="form-label"
+                        >Modelo</label
+                      >
+                      <input
+                        id="vehicleModel"
+                        class="form-control"
+                        type="text"
+                        required
+                        placeholder="Ranger"
+                      />
+                    </div>
+                    <div class="col-lg-3">
+                      <label for="vehicleYear" class="form-label">Ano</label>
+                      <input
+                        id="vehicleYear"
+                        class="form-control"
+                        type="number"
+                        required
+                        min="1900"
+                        max="2099"
+                        placeholder="2026"
+                      />
+                    </div>
+                    <div class="col-lg-3">
+                      <label for="vehiclePlate" class="form-label">Placa</label>
+                      <input
+                        id="vehiclePlate"
+                        class="form-control text-uppercase"
+                        type="text"
+                        required
+                        placeholder="ABC1D23"
+                      />
+                    </div>
+                    <div class="col-12 d-flex flex-wrap gap-2 pt-1">
+                      <button type="submit" class="btn btn-info">
+                        Salvar veículo
+                      </button>
+                      <button type="reset" class="btn btn-outline-light">
+                        Limpar
+                      </button>
+                    </div>
+                  </form>
+                </section>
+
+                <section class="form-panel">
+                  <div class="form-section-title">
+                    <h3 class="h5">3. Cadastro de Vendedores</h3>
+                    <span class="form-help">Controle de status e comissão</span>
+                  </div>
+                  <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-lg-5">
+                      <label for="sellerName" class="form-label">Nome</label>
+                      <input
+                        id="sellerName"
+                        class="form-control"
+                        type="text"
+                        required
+                        placeholder="Nome do vendedor"
+                      />
+                    </div>
+                    <div class="col-lg-3">
+                      <label for="sellerSector" class="form-label">Setor</label>
+                      <select id="sellerSector" class="form-select" required>
+                        <option selected disabled value="">Selecione</option>
+                        <option>Comercial</option>
+                        <option>Instalação</option>
+                        <option>Pós-venda</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-2">
+                      <label for="sellerCommission" class="form-label"
+                        >Comissão</label
+                      >
+                      <div class="input-group">
+                        <span class="input-group-text">%</span>
+                        <input
+                          id="sellerCommission"
+                          class="form-control"
+                          type="number"
+                          step="0.01"
+                          min="0"
+                          required
+                          placeholder="5,0"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-lg-2">
+                      <label for="sellerStatus" class="form-label"
+                        >Status</label
+                      >
+                      <select id="sellerStatus" class="form-select" required>
+                        <option selected>Ativo</option>
+                        <option>Inativo</option>
+                        <option>Férias</option>
+                      </select>
+                    </div>
+                    <div class="col-12 d-flex flex-wrap gap-2 pt-1">
+                      <button type="submit" class="btn btn-info">
+                        Salvar vendedor
+                      </button>
+                      <button type="reset" class="btn btn-outline-light">
+                        Limpar
+                      </button>
+                    </div>
+                  </form>
+                </section>
+
+                <section class="form-panel">
+                  <div class="form-section-title">
+                    <h3 class="h5">4. Cadastro de Serviços</h3>
+                    <span class="form-help"
+                      >Base para ordens e faturamento</span
+                    >
+                  </div>
+                  <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-lg-5">
+                      <label for="serviceName" class="form-label"
+                        >Nome do Serviço</label
+                      >
+                      <input
+                        id="serviceName"
+                        class="form-control"
+                        type="text"
+                        required
+                        placeholder="Aplicação premium"
+                      />
+                    </div>
+                    <div class="col-lg-3">
+                      <label for="serviceCategory" class="form-label"
+                        >Categoria</label
+                      >
+                      <select id="serviceCategory" class="form-select" required>
+                        <option selected disabled value="">Selecione</option>
+                        <option>Instalação</option>
+                        <option>Manutenção</option>
+                        <option>Proteção</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-2">
+                      <label for="serviceValue" class="form-label">Valor</label>
+                      <div class="input-group">
+                        <span class="input-group-text">R$</span>
+                        <input
+                          id="serviceValue"
+                          class="form-control"
+                          type="number"
+                          step="0.01"
+                          min="0"
+                          required
+                          placeholder="0,00"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-lg-2">
+                      <label for="serviceCost" class="form-label">Custo</label>
+                      <div class="input-group">
+                        <span class="input-group-text">R$</span>
+                        <input
+                          id="serviceCost"
+                          class="form-control"
+                          type="number"
+                          step="0.01"
+                          min="0"
+                          required
+                          placeholder="0,00"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <label for="serviceDescription" class="form-label"
+                        >Descrição</label
+                      >
+                      <textarea
+                        id="serviceDescription"
+                        class="form-control"
+                        rows="3"
+                        required
+                        placeholder="Detalhe o escopo do serviço"
+                      ></textarea>
+                    </div>
+                    <div class="col-12 d-flex flex-wrap gap-2 pt-1">
+                      <button type="submit" class="btn btn-info">
+                        Salvar serviço
+                      </button>
+                      <button type="reset" class="btn btn-outline-light">
+                        Limpar
+                      </button>
+                    </div>
+                  </form>
+                </section>
+
+                <section class="form-panel">
+                  <div class="form-section-title">
+                    <h3 class="h5">5. Cadastro de Despesas</h3>
+                    <span class="form-help">Controle financeiro e rateio</span>
+                  </div>
+                  <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-lg-4">
+                      <label for="expenseCategory" class="form-label"
+                        >Categoria</label
+                      >
+                      <select id="expenseCategory" class="form-select" required>
+                        <option selected disabled value="">Selecione</option>
+                        <option>Administrativa</option>
+                        <option>Operacional</option>
+                        <option>Comercial</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-4">
+                      <label for="expenseDescription" class="form-label"
+                        >Descrição</label
+                      >
+                      <input
+                        id="expenseDescription"
+                        class="form-control"
+                        type="text"
+                        required
+                        placeholder="Conta de energia"
+                      />
+                    </div>
+                    <div class="col-lg-2">
+                      <label for="expenseValue" class="form-label">Valor</label>
+                      <div class="input-group">
+                        <span class="input-group-text">R$</span>
+                        <input
+                          id="expenseValue"
+                          class="form-control"
+                          type="number"
+                          step="0.01"
+                          min="0"
+                          required
+                          placeholder="0,00"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-lg-2">
+                      <label for="expenseDate" class="form-label">Data</label>
+                      <input
+                        id="expenseDate"
+                        class="form-control"
+                        type="date"
+                        required
+                      />
+                    </div>
+                    <div class="col-lg-4">
+                      <label for="expenseResponsible" class="form-label"
+                        >Responsável</label
+                      >
+                      <input
+                        id="expenseResponsible"
+                        class="form-control"
+                        type="text"
+                        required
+                        placeholder="Nome do responsável"
+                      />
+                    </div>
+                    <div class="col-12 d-flex flex-wrap gap-2 pt-1">
+                      <button type="submit" class="btn btn-info">
+                        Salvar despesa
+                      </button>
+                      <button type="reset" class="btn btn-outline-light">
+                        Limpar
+                      </button>
+                    </div>
+                  </form>
+                </section>
+
+                <section class="form-panel">
+                  <div class="form-section-title">
+                    <h3 class="h5">6. Cadastro de Requisições GWM</h3>
+                    <span class="form-help"
+                      >Fluxo com veículo, modelo e película</span
+                    >
+                  </div>
+                  <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-lg-2">
+                      <label for="gwmDate" class="form-label">Data</label>
+                      <input
+                        id="gwmDate"
+                        class="form-control"
+                        type="date"
+                        required
+                      />
+                    </div>
+                    <div class="col-lg-3">
+                      <label for="gwmVehicle" class="form-label">Veículo</label>
+                      <input
+                        id="gwmVehicle"
+                        class="form-control"
+                        type="text"
+                        required
+                        placeholder="Placa ou identificador"
+                      />
+                    </div>
+                    <div class="col-lg-3">
+                      <label for="gwmModel" class="form-label">Modelo</label>
+                      <input
+                        id="gwmModel"
+                        class="form-control"
+                        type="text"
+                        required
+                        placeholder="H6"
+                      />
+                    </div>
+                    <div class="col-lg-2">
+                      <label for="gwmFilm" class="form-label">Película</label>
+                      <input
+                        id="gwmFilm"
+                        class="form-control"
+                        type="text"
+                        required
+                        placeholder="HB70"
+                      />
+                    </div>
+                    <div class="col-lg-2">
+                      <label for="gwmValue" class="form-label">Valor</label>
+                      <div class="input-group">
+                        <span class="input-group-text">R$</span>
+                        <input
+                          id="gwmValue"
+                          class="form-control"
+                          type="number"
+                          step="0.01"
+                          min="0"
+                          required
+                          placeholder="0,00"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <label for="gwmNotes" class="form-label"
+                        >Observação</label
+                      >
+                      <textarea
+                        id="gwmNotes"
+                        class="form-control"
+                        rows="3"
+                        placeholder="Informações complementares"
+                      ></textarea>
+                    </div>
+                    <div class="col-12 d-flex flex-wrap gap-2 pt-1">
+                      <button type="submit" class="btn btn-info">
+                        Salvar requisição GWM
+                      </button>
+                      <button type="reset" class="btn btn-outline-light">
+                        Limpar
+                      </button>
+                    </div>
+                  </form>
+                </section>
+
+                <section class="form-panel">
+                  <div class="form-section-title">
+                    <h3 class="h5">7. Cadastro de Requisições Ford</h3>
+                    <span class="form-help"
+                      >Mesma estrutura da GWM para padronização</span
+                    >
+                  </div>
+                  <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-lg-2">
+                      <label for="fordDate" class="form-label">Data</label>
+                      <input
+                        id="fordDate"
+                        class="form-control"
+                        type="date"
+                        required
+                      />
+                    </div>
+                    <div class="col-lg-3">
+                      <label for="fordVehicle" class="form-label"
+                        >Veículo</label
+                      >
+                      <input
+                        id="fordVehicle"
+                        class="form-control"
+                        type="text"
+                        required
+                        placeholder="Placa ou identificador"
+                      />
+                    </div>
+                    <div class="col-lg-3">
+                      <label for="fordModel" class="form-label">Modelo</label>
+                      <input
+                        id="fordModel"
+                        class="form-control"
+                        type="text"
+                        required
+                        placeholder="Ranger"
+                      />
+                    </div>
+                    <div class="col-lg-2">
+                      <label for="fordFilm" class="form-label">Película</label>
+                      <input
+                        id="fordFilm"
+                        class="form-control"
+                        type="text"
+                        required
+                        placeholder="Nano 5"
+                      />
+                    </div>
+                    <div class="col-lg-2">
+                      <label for="fordValue" class="form-label">Valor</label>
+                      <div class="input-group">
+                        <span class="input-group-text">R$</span>
+                        <input
+                          id="fordValue"
+                          class="form-control"
+                          type="number"
+                          step="0.01"
+                          min="0"
+                          required
+                          placeholder="0,00"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <label for="fordNotes" class="form-label"
+                        >Observação</label
+                      >
+                      <textarea
+                        id="fordNotes"
+                        class="form-control"
+                        rows="3"
+                        placeholder="Informações complementares"
+                      ></textarea>
+                    </div>
+                    <div class="col-12 d-flex flex-wrap gap-2 pt-1">
+                      <button type="submit" class="btn btn-info">
+                        Salvar requisição Ford
+                      </button>
+                      <button type="reset" class="btn btn-outline-light">
+                        Limpar
+                      </button>
+                    </div>
+                  </form>
+                </section>
+
+                <section class="form-panel">
+                  <div class="form-section-title">
+                    <h3 class="h5">8. Cadastro de Ordens de Serviço</h3>
+                    <span class="form-help">Status padronizado do fluxo</span>
+                  </div>
+                  <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-lg-4">
+                      <label for="orderClient" class="form-label"
+                        >Cliente</label
+                      >
+                      <select id="orderClient" class="form-select" required>
+                        <option selected disabled value="">Selecione</option>
+                        <option>Cliente Alfa</option>
+                        <option>Cliente Beta</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-4">
+                      <label for="orderVehicle" class="form-label"
+                        >Veículo</label
+                      >
+                      <input
+                        id="orderVehicle"
+                        class="form-control"
+                        type="text"
+                        required
+                        placeholder="Veículo vinculado"
+                      />
+                    </div>
+                    <div class="col-lg-4">
+                      <label for="orderService" class="form-label"
+                        >Serviço</label
+                      >
+                      <select id="orderService" class="form-select" required>
+                        <option selected disabled value="">Selecione</option>
+                        <option>Aplicação premium</option>
+                        <option>Instalação técnica</option>
+                        <option>Proteção solar</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-3">
+                      <label for="orderValue" class="form-label">Valor</label>
+                      <div class="input-group">
+                        <span class="input-group-text">R$</span>
+                        <input
+                          id="orderValue"
+                          class="form-control"
+                          type="number"
+                          step="0.01"
+                          min="0"
+                          required
+                          placeholder="0,00"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-lg-3">
+                      <label for="orderDate" class="form-label">Data</label>
+                      <input
+                        id="orderDate"
+                        class="form-control"
+                        type="date"
+                        required
+                      />
+                    </div>
+                    <div class="col-lg-3">
+                      <label for="orderStatus" class="form-label">Status</label>
+                      <select id="orderStatus" class="form-select" required>
+                        <option selected>Aberta</option>
+                        <option>Em Andamento</option>
+                        <option>Finalizada</option>
+                        <option>Cancelada</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-3 d-flex align-items-end">
+                      <div class="dashboard-note w-100">
+                        <strong>Confirmação</strong><br />
+                        O salvamento deve exibir feedback visual e histórico da
+                        operação.
+                      </div>
+                    </div>
+                    <div class="col-12 d-flex flex-wrap gap-2 pt-1">
+                      <button type="submit" class="btn btn-info">
+                        Salvar ordem de serviço
+                      </button>
+                      <button type="reset" class="btn btn-outline-light">
+                        Limpar
+                      </button>
+                    </div>
+                  </form>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-4">
+          <div class="card dashboard-panel h-100">
+            <div class="card-header bg-transparent border-0 pb-0">
+              <h2 class="h5 mb-1">Histórico de alterações</h2>
+              <p class="dashboard-subtitle mb-0">
+                Registro resumido das últimas mudanças aplicadas nos módulos.
+              </p>
+            </div>
+            <div class="card-body">
+              <div class="history-timeline">
+                <div class="history-entry">
+                  <time>Hoje, 09:20</time>
+                  <p>
+                    Cliente atualizado com novo endereço e telefone de contato.
+                  </p>
+                </div>
+                <div class="history-entry">
+                  <time>Hoje, 08:45</time>
+                  <p>
+                    Ordem de serviço finalizada com confirmação de faturamento.
+                  </p>
+                </div>
+                <div class="history-entry">
+                  <time>Ontem, 18:10</time>
+                  <p>Despesa operacional vinculada ao responsável do setor.</p>
+                </div>
+                <div class="history-entry">
+                  <time>Ontem, 15:00</time>
+                  <p>Requisição GWM salva com modelo, película e observação.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
