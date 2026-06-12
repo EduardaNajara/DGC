@@ -62,17 +62,15 @@
 .brand-badge {
     width: 3.5rem;
     height: 2.65rem;
+    margin-left: 1rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: 0.3rem;
-    background: linear-gradient(135deg, #7dd3fc, #38bdf8);
-    color: #07111f;
-    font-style: normal;
-    font-size: 1.05rem;
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.22);
+    color: #38bdf8;
+    letter-spacing: 0.1em;
+    font-size: 1.5rem;
+    font-weight: 600;
+    opacity: 80%;
 }
 
 .brand-copy {
@@ -182,6 +180,7 @@
 body {
     min-height: 75rem;
     padding-top: 4.5rem;
+    font-family: 'Poppins', sans-serif;
     background:
         radial-gradient(circle at top left, rgba(125, 211, 252, 0.12), transparent 30%),
         radial-gradient(circle at top right, rgba(245, 158, 11, 0.1), transparent 28%),
